@@ -2,9 +2,8 @@ import logging
 import os
 import time
 
-os.system('pip3 install -q kapre')
+os.system('pip3 install -q kapre==0.1.7')
 
-import keras
 import numpy as np
 import tensorflow as tf
 
@@ -48,7 +47,7 @@ FMAX = SAMPLING_RATE // 2
 
 
 def make_extractor(input_shape, sr=SAMPLING_RATE):
-    model = keras.models.Sequential()
+    model = Sequential()
 
     model.add(
         Melspectrogram(
